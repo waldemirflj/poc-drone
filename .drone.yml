@@ -12,7 +12,7 @@ pipeline:
   telegram:
     image: appleboy/drone-telegram
     token: 361259032:AAF9jR2H1ZcTGIKjB_HxdI_PIwGAe8nYT1Y
-    to: waldemirflj
+    to: @waldemirflj
     message: >
       {{#success build.status}}
         build {{build.number}} succeeded. Good job.
