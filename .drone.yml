@@ -1,0 +1,10 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: backend
+    image: node:8.15.0-alpine
+    commands:
+      - npm install
+      - npm test
+    
