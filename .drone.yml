@@ -7,14 +7,15 @@ steps:
     commands:
       - npm install
       - npm test
-
-    telegram:
-      image: appleboy/drone-telegram
-      token: 361259032:AAF9jR2H1ZcTGIKjB_HxdI_PIwGAe8nYT1Y
-      to: waldemirflj
-      message: >
-        {{#success build.status}}
-          build {{build.number}} succeeded. Good job.
-        {{else}}
-          build {{build.number}} failed. Fix me please.
-        {{/success}}
+      
+    pipeline:  
+      telegram:
+        image: appleboy/drone-telegram
+        token: 361259032:AAF9jR2H1ZcTGIKjB_HxdI_PIwGAe8nYT1Y
+        to: waldemirflj
+        message: >
+          {{#success build.status}}
+            build {{build.number}} succeeded. Good job.
+          {{else}}
+            build {{build.number}} failed. Fix me please.
+          {{/success}}
