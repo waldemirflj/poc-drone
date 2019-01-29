@@ -11,7 +11,8 @@ steps:
     image: appleboy/drone-telegram
     settings:
       token: 768557743:AAGO25NAD45-sQAyNPfGQe8B1-TwpQcFzRU
-      to: waldemir_status_bot
+      # to: waldemir_status_bot
+      to: userinfobot
       message: >
         {{#success build.status}}
           ✅ build {{build.number}} succeeded. Good job.
