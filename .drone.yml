@@ -10,7 +10,7 @@ steps:
     image: node:8.15.0-alpine
     commands:
       - npm install
-  
+
   - name: test
     image: node:8.15.0-alpine
     commands:
