@@ -13,11 +13,12 @@ steps:
       - npm test
 
   - name: telegram
-    debug: true
     image: appleboy/drone-telegram
     settings:
       to: waldemir_drone_bot
       token: 702080745:AAFggTF5Is0UzeX4gxBaNIDz77-BKOLrN7c
+      when:
+        status: [ success, failure ]
       message: >
         {{#success build.status}}
           ✅ build {{build.number}} succeeded. Good job.
