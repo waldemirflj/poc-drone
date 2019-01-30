@@ -1,5 +1,6 @@
 kind: pipeline
 name: default
+debug: true
 
 steps:
   - name: backend
