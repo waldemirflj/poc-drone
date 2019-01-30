@@ -1,6 +1,5 @@
 kind: pipeline
 name: default
-debug: true
 
 steps:
   - name: backend
@@ -9,6 +8,7 @@ steps:
       - npm install
       - npm test
   - name: telegram
+    debug: true
     image: appleboy/drone-telegram
     # settings:
     to: waldemir_drone_bot
