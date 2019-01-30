@@ -9,14 +9,12 @@ steps:
       - npm test
   - name: telegram
     image: appleboy/drone-telegram
-    settings:
-      to: waldemir_status_bot
-      token: 768557743:AAGO25NAD45-sQAyNPfGQe8B1-TwpQcFzRU
-      when:
-        status: [ success, failure ]
-      message: >
-        {{#success build.status}}
-          ✅ build {{build.number}} succeeded. Good job.
-        {{else}}
-          ❌ build {{build.number}} failed. Fix me please.
-        {{/success}}
+    # settings:
+    to: waldemir_drone_bot
+    token: 702080745:AAFggTF5Is0UzeX4gxBaNIDz77-BKOLrN7c
+    message: >
+      {{#success build.status}}
+        ✅ build {{build.number}} succeeded. Good job.
+      {{else}}
+        ❌ build {{build.number}} failed. Fix me please.
+      {{/success}}
