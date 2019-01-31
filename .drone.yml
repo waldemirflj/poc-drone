@@ -5,7 +5,7 @@ pipeline:
       - npm install
     when:
       branches: develop
-      event: [push, pull_request, tag]
+      event: push
 
   npm_test:
     image: node:8.15.0-alpine
@@ -13,4 +13,4 @@ pipeline:
       - npm test
     when:
       branches: develop
-      event: [push, pull_request, tag]
+      event: push
