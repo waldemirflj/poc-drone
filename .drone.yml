@@ -23,6 +23,6 @@ pipeline:
     username: ${private_docker_username}
     password: ${private_docker_password}
     when:
-      branch: master
+      branch: [ develop ]
         
 
