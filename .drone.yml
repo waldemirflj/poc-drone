@@ -20,7 +20,8 @@ pipeline:
   docker-registry-push:
     image: plugins/docker
     repo: waldemirflj/poc-drone
-    secrets: [ private_docker_username, private_docker_password ]
+    username: $docker_username
+    password: $docker_password
     when:
       branch: [ develop ]
         
