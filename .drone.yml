@@ -16,3 +16,12 @@ pipeline:
     when:
       branch: [ develop ]
       event: [ push ]
+  
+  docker_registry_push:
+    image: plugins/docker
+    repo: waldemirflj/poc-drone
+    username: ${PRIVATE_DOCKER_USERNAME}
+    password: ${PRIVATE_DOCKER_PASSWORD}
+    when:
+      branch: master
+

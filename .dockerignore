@@ -1,0 +1,6 @@
+.env
+.drone.yml
+.gitignore
+README.md
+docker/
+api/node_modules/
