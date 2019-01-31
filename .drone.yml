@@ -1,10 +1,19 @@
+clone:
+  depth: true
+
 pipeline:
-  install:
+  npm_install:
     image: node:8.15.0-alpine
     commands:
       - npm install
+    when:
+      branches: [develop]
+      event: [push, pull_request, tag]
 
-  test:
+  npm_test:
     image: node:8.15.0-alpine
     commands:
       - npm test
+    when:
+      branches: [develop]
+      event: [push, pull_request, tag]
