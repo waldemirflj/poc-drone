@@ -24,4 +24,5 @@ pipeline:
     password: ${PRIVATE_DOCKER_PASSWORD}
     when:
       branch: master
+      
 
