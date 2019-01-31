@@ -1,5 +1,5 @@
 pipeline:
-  npm_install:
+  npm-install:
     image: node:8.15.0-alpine
     commands:
       - cd api/
@@ -8,7 +8,7 @@ pipeline:
       branch: [ develop ]
       event: [ push ]
 
-  npm_test:
+  npm-test:
     image: node:8.15.0-alpine
     commands:
       - cd api/
@@ -17,12 +17,12 @@ pipeline:
       branch: [ develop ]
       event: [ push ]
   
-  docker_registry_push:
+  docker-registry-push:
     image: plugins/docker
     repo: waldemirflj/poc-drone
-    username: ${PRIVATE_DOCKER_USERNAME}
-    password: ${PRIVATE_DOCKER_PASSWORD}
+    username: ${private_docker_username}
+    password: ${private_docker_password}
     when:
       branch: master
-      
+        
 
