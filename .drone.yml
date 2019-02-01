@@ -51,6 +51,7 @@ pipeline:
 
   push-to-release:
     image: plugins/git-push
+    secrets: [ github_username, github_password ]
     remote_name: origin
     branch: release
     when:
