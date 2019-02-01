@@ -24,11 +24,11 @@ pipeline:
   
   docker-registry-push:
     image: plugins/docker
+    commands:
+      - ls -la
     repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
-    commands:
-      - ls -la
     tags:
       - latest
       # - ${DRONE_COMMIT_SHA:0:8}
