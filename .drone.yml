@@ -32,6 +32,11 @@ pipeline:
     commands:
       - ls hello.txt
 
+  git-version:
+    image: alpine
+    commands:
+      - git -v
+
   # docker-registry-push:
   #   image: plugins/docker
   #   repo: waldemirflj/poc-drone
