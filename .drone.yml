@@ -21,6 +21,7 @@ pipeline:
     image: plugins/docker
     repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
+    dockerfile: Dockerfile
     tags:
       - latest
         
