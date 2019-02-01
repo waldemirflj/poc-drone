@@ -24,8 +24,11 @@ pipeline:
   
   docker-registry-push:
     image: plugins/docker
-    repo: "waldemirflj/poc-drone:${VERSION}"
+    repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
+    tags:
+      - ${DRONE_COMMIT_BRANCH}
+      - latest
         
 
