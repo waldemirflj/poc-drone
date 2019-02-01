@@ -27,9 +27,8 @@ pipeline:
     repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
-    auto_tag: true
-    # tags:
-    #   - latest
-    #   - ${DRONE_COMMIT_BRANCH}
+    tags:
+      - latest
+      # - ${DRONE_COMMIT_BRANCH}
         
 
