@@ -17,10 +17,11 @@ pipeline:
       branch: [ develop ]
       event: [ push ]
   
-  # npm-version:
-  #   image: node:8.15.0-alpine
-  #   commands:
-  #     - export VERSION=$(npm version patch)
+  npm-version:
+    image: node:8.15.0-alpine
+    commands:
+      # - export VERSION=$(npm version patch)
+      - export VERSION=1.0.0
   
   docker-registry-push:
     image: plugins/docker
@@ -28,7 +29,8 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
     tags:
-      - latest
+      - ${VERSION}
+      # - latest
       # - ${DRONE_COMMIT_BRANCH}
         
 
