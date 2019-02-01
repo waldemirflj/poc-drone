@@ -17,16 +17,16 @@ pipeline:
       branch: [ develop ]
       event: [ push ]
   
-  npm-version:
-    image: node:8.15.0-alpine
-    commands:
-      - export VERSION=$(npm version patch)
+  # npm-version:
+  #   image: node:8.15.0-alpine
+  #   commands:
+  #     - export VERSION=$(npm version patch)
   
   docker-registry-push:
     image: plugins/docker
     repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
-    tags: $VERSION
+    default_tags: true
         
 
