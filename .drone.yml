@@ -21,15 +21,20 @@ pipeline:
   #   image: node:8.15.0-alpine
   #   commands:
   #     - export VERSION=$(npm version patch)
+
+  build:
+    when:
+      branch:
+        - master
   
-  docker-registry-push:
-    image: plugins/docker
-    repo: waldemirflj/poc-drone
-    secrets: [ docker_username, docker_password ]
-    dockerfile: Dockerfile
-    tags:
-      - latest
-      # - ${DRONE_COMMIT_SHA:0:8}
-      # - ${DRONE_COMMIT_BRANCH}
+  # docker-registry-push:
+  #   image: plugins/docker
+  #   repo: waldemirflj/poc-drone
+  #   secrets: [ docker_username, docker_password ]
+  #   dockerfile: Dockerfile
+  #   tags:
+  #     - latest
+  #     # - ${DRONE_COMMIT_SHA:0:8}
+  #     # - ${DRONE_COMMIT_BRANCH}
         
 
