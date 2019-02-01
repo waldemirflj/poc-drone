@@ -28,10 +28,10 @@ pipeline:
     repo: waldemirflj/poc-drone
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
-    tags:
-      # - $VERSION
-      # - latest
-      - ${DRONE_COMMIT_SHA}
-      # - ${DRONE_COMMIT_BRANCH}
+    tags: 1.0.0
+    # tags:
+    #   - latest
+    #   - ${DRONE_COMMIT_SHA}
+    #   - ${DRONE_COMMIT_BRANCH}
         
 
