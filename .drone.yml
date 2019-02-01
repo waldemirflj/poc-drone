@@ -29,8 +29,9 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
     tags:
-      - ${VERSION}
+      # - $VERSION
       # - latest
+      - ${DRONE_COMMIT_SHA}
       # - ${DRONE_COMMIT_BRANCH}
         
 
