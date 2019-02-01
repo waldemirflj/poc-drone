@@ -33,7 +33,7 @@ pipeline:
       - ls hello.txt
 
   git-version:
-    image: alpine
+    image: plugins/git
     commands:
       - git -v
 
