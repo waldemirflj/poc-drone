@@ -22,11 +22,6 @@ pipeline:
   #   commands:
   #     - export VERSION=$(npm version patch)
 
-  build:
-    when:
-      branch:
-        - master
-  
   # docker-registry-push:
   #   image: plugins/docker
   #   repo: waldemirflj/poc-drone
